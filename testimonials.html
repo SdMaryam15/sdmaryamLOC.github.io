@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials</title>
+    <link rel="stylesheet" href="Style.css"> 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('nav.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('body').insertAdjacentHTML('afterbegin', data);
+                });
+        });
+        fetch('custReviews.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+
+        // Fetch the footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+    </script>
+</head>
+<body>
+    <h1>
+        Lochquarry Outdoor centre </h1>
+        <div class="container">
+            <h2>Testimonials</h2>
+            <div class="activity-section">
+                <div class="description">
+                    <p>Our satisfied cutomersReviews:</p>
+                    <ul></ul>
+                  <li>‘We had a great time and loved all the different activities that we did’ − 8th Gourock Guides</li>
+
+                  <li>‘The Scouts loved every second of it, especially the powerboating’ − Martin Bainbridge, Scout Leader</li>
+                    
+                  <li>‘I would definitely come back’ − Kelly, aged 9</li>
+                    
+                  <li>‘Thank you to all the staff who worked so hard, in awful weather, to make sure that all the pupils had
+                      an amazing experience’ − Mrs Kahn, Hillend Primary School</li>
+                    
+                  <li>‘Five stars, it was great’ − Joe, aged 14</li>
+                    
+                 <li>‘I was really scared about the abseiling but the instructor Mike was really 
+                      encouraging and helped me do it, thanks Mike’ − Sophie, aged 10</li>
+                    
+                  <li>‘The archery was brilliant, but not as good as axe throwing, I never thought we’d be allowed to do
+                      that! I got one of my axes right in the middle of the target’ − Scott, aged 13</li>
+                    
+                  <li>‘The kids had a ball and didn’t want to leave’ − Mr Evans, PE teacher</li>
+                </div>
+            </div>   
+        </div>
+       <img src="Images/Banner.png" alt="Customer Review Banner"> 
+</body>
+</html>

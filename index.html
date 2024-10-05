@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="Style.css"> 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('nav.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('body').insertAdjacentHTML('afterbegin', data);
+                });
+        });
+        fetch('custReviews.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+        // Fetch the footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+           
+            function updateDateTime() {
+            const dateTimeElement = document.getElementById('dt');
+            const now = new Date();
+            const hours = now.getHours();
+    
+            // Format the date and time
+            const formattedDate = now.toLocaleDateString();  // Get the date
+            const formattedTime = now.toLocaleTimeString();  // Get the time
+    
+            // Update the date and time
+            dateTimeElement.innerHTML = `Date: ${formattedDate} | Time: ${formattedTime}`;
+    
+            // Change color based on time of day
+            if (hours < 12) {
+                dateTimeElement.style.color = "blue";  // Morning (before 12 PM)
+            } else if (hours < 18) {
+                dateTimeElement.style.color = "White"; // Afternoon (12 PM - 6 PM)
+            } else {
+                dateTimeElement.style.color = "red";   // Evening (after 6 PM)
+            }
+        }
+    
+        // Update date and time every second
+        setInterval(updateDateTime, 1000);        
+    </script>
+    
+</head>
+<body>
+    <h1>Lochquarry Outdoor Centre</h1>    
+    
+    
+    <div class="container">
+        <h2>About our Centre</h2>
+        <div class="activity-section">
+    <p>Lochquarry Outdoor Centre is set in acres of land in the heart of the majestic Argyll hills.
+     On our doorstep is not only magnificent scenery, but also a breath-taking selection of outdoor
+     and adventurous activities.
+     With activities designed to meet the needs of all ages and experiences of young people,
+     Lochquarry truly brings adventure to everyone.
+     Each activity is run under the instruction of one of our highly trained staff and all safety
+     equipment is provided</p> </div>
+     <div class="activity-section">
+     <p>Lochquarry Outdoor Centre provides outdoor activities for young people aged 6–18.
+
+        They have recently expanded the number of different activities that they offer and
+        would like to have a website that informs potential visitors about all the exciting
+        activities that young people can take part in at Lochquarry.
+       The activities that the centre offers can be split into three main categories:
+       land-based, water-based and rope-based.</p>
+   
+    </div>
+    </div>
+   
+    <img src="Images/Banner.png" alt="Customer Review Banner">
+</body>
+</html>

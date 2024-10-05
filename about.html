@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities | Lochquarry Outdoor Centre</title>
+    <link rel="stylesheet" href="Style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('nav.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('body').insertAdjacentHTML('afterbegin', data);
+                });
+        });
+        fetch('custReviews.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+
+        // Fetch the footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+    </script>
+</head>
+<body>  
+    <h1>Lochquarry Outdoor Centre</h1>
+    <div class="container">
+        <div class="activity-section">
+            <div class="description">
+  <ul>
+<li>Each activity is run under the instruction of one of our highly trained staff
+   and all safety equipment is provided. Let’s meet some of the Lochquarry staff:</li>
+  
+ <li>  Name: Claire Jack
+Position: Centre Manager
+Responsible for: The overall running of the centre and all of its activities
+Favourite Activity: Pole climb</li>
+<li>
+Name: Robbie Elliot
+Position: Senior Instructor (Land)
+Responsible for: Overseeing all of the land based activities
+Favourite Activity: Hillwalking in the beautiful Scottish highlands</li>
+<li>
+Name: Marion Hunter
+Position: Centre Administrator</li>
+<li>
+Responsible for: Making bookings and arranging activity slots for groups
+Favourite Activity: Making sure everyone has a great time when the visit 
+Lochquarry
+
+Our activities are very popular with youth groups including Scouts and Guides.
+</li>
+</ul>
+</div>
+</P>
+        </div>
+    <img src="Images/Banner.png" alt="Customer Review Banner">
+   
+
+</body>
+</html>
