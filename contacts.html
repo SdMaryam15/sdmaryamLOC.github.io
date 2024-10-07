@@ -5,43 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <link rel="stylesheet" href="Style.css"> 
+    <style>
+       
+    </style>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // Fetch the navigation
             fetch('nav.html')
                 .then(response => response.text())
                 .then(data => {
                     document.querySelector('body').insertAdjacentHTML('afterbegin', data);
                 });
+
+            // Fetch the footer
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML('beforeend', data);
+                });
+
+            // Modal logic
+            const modal = document.getElementById("myModal");
+            const btn = document.getElementById("submitBtn");
+            const closeModal = document.getElementsByClassName("close")[0];
+            const submitModalBtn = document.getElementById("modalSubmitBtn");
+
+            // Open modal on button click
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
+
+            // Close the modal when the user clicks on <span> (x)
+            closeModal.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // Close the modal when the user clicks anywhere outside of the modal
+            window.onclick = function(event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+            // Close the modal when the submit button inside the modal is clicked
+            submitModalBtn.onclick = function() {
+                modal.style.display = "none";
+            }
         });
-        fetch('custReviews.html')
-            .then(response => response.text())
-            .then(data => {
-                document.body.insertAdjacentHTML('beforeend', data);
-            });
-        // Fetch the footer
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.body.insertAdjacentHTML('beforeend', data);
-            });
     </script>
 </head>
 <body>
-    <h1>
-        Lochquarry Outdoor centre
-    </h1> 
-    <div class="activity-section">
-        <div class="description">
-    <p>For other details :</p>
-    <p>Flat 2/2 125 St Georges Road,
-        postcode:G36JA
-       <p>Name: Marion Hunter
-        Position: Centre Administrator</p>
-        ContactUs:01475 229 8311.
-    </p>
-</div>
-</div>
+    <h1>Lochquarry Outdoor Centre</h1> 
+    <div class="container">
+        <h3>Contact Us :</h3>
+        <div class="activity-section">
+            <div class="description">
+                <p>Flat 2/2 125 St Georges Road, postcode: G36JA</p>
+                <p>Name: Marion Hunter<br>Position: Centre Administrator</p>
+                <p>Call Us: 01475 229 8311.<br>For Queries: customersupport@LocquarryOutdoor.co.uk</p>
+                <button id="submitBtn">Submit Query Here</button>
+            </div>
+            <div class="image">
+                <img src="Images/Happy customer.jpeg" alt="Rope Based Activities">
+            </div>
+        </div>
+    </div>
 
-    <img src="Images/Banner.png" alt="Customer Review Banner">
+    <div class="banner-image">
+        <img src="Images/Banner.png" alt="Customer Review Banner">
+    </div>
+
+    <section class="reviews">
+        <h2>Customer Reviews</h2>
+        <p>‘Five stars, it was great’<b>− Joe, aged 14</b></p>
+    </section>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Please provide your feedback below:</p>
+            <textarea placeholder="Type your feedback here..."></textarea><br>
+            <button id="modalSubmitBtn">Submit</button>
+        </div>
+    </div>
+    
 </body>
 </html>

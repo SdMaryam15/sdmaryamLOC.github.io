@@ -13,11 +13,6 @@
                     document.querySelector('body').insertAdjacentHTML('afterbegin', data);
                 });
         });
-        fetch('custReviews.html')
-            .then(response => response.text())
-            .then(data => {
-                document.body.insertAdjacentHTML('beforeend', data);
-            });
 
         // Fetch the footer
         fetch('footer.html')
@@ -100,8 +95,14 @@
         </div>
     </div>
 
-    <img src="Images/Banner.png" alt="Customer Review Banner">
-   
-
+    <div class="banner-image">
+        <img src="Images/Banner.png" alt="Customer Review Banner">
+    </div>
+    
+    <section class="reviews">
+        <h2>Customer Reviews</h2>
+        <p>‘Thank you to all the staff who worked so hard, in awful weather, to make sure that all the pupils
+            had an amazing experience’<b>− Mrs Kahn,Hillend Primary School</b></p>
+    </section>
 </body>
 </html>
