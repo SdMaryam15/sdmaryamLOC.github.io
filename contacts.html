@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <link rel="stylesheet" href="Style.css"> 
+    <link rel="stylesheet" href="Style.css">
     <style>
-       
+
     </style>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             // Fetch the navigation
             fetch('nav.html')
                 .then(response => response.text())
@@ -31,31 +32,32 @@
             const submitModalBtn = document.getElementById("modalSubmitBtn");
 
             // Open modal on button click
-            btn.onclick = function() {
+            btn.onclick = function () {
                 modal.style.display = "block";
             }
 
             // Close the modal when the user clicks on <span> (x)
-            closeModal.onclick = function() {
+            closeModal.onclick = function () {
                 modal.style.display = "none";
             }
 
             // Close the modal when the user clicks anywhere outside of the modal
-            window.onclick = function(event) {
+            window.onclick = function (event) {
                 if (event.target === modal) {
                     modal.style.display = "none";
                 }
             }
 
             // Close the modal when the submit button inside the modal is clicked
-            submitModalBtn.onclick = function() {
+            submitModalBtn.onclick = function () {
                 modal.style.display = "none";
             }
         });
     </script>
 </head>
+
 <body>
-    <h1>Lochquarry Outdoor Centre</h1> 
+    <h1>Lochquarry Outdoor Centre</h1>
     <div class="container">
         <h3>Contact Us :</h3>
         <div class="activity-section">
@@ -66,7 +68,7 @@
                 <button id="submitBtn">Submit Query Here</button>
             </div>
             <div class="image">
-                <img src="Images/Happy customer.jpeg" alt="Rope Based Activities">
+                <img src="Images/Happycustomer.jpeg" alt="Rope Based Activities">
             </div>
         </div>
     </div>
@@ -89,6 +91,7 @@
             <button id="modalSubmitBtn">Submit</button>
         </div>
     </div>
-    
+
 </body>
+
 </html>
