@@ -7,22 +7,6 @@
     <title>Activities | Lochquarry Outdoor Centre</title>
     <link rel="stylesheet" href="Style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            fetch('nav.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.querySelector('body').insertAdjacentHTML('afterbegin', data);
-                });
-        });
-
-        // Fetch the footer
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.body.insertAdjacentHTML('beforeend', data);
-            });
-    </script>
 </head>
 
 <body>
@@ -87,7 +71,7 @@
         <p>‘I would definitely come back’ <b>− Kelly, aged 9</b></p>
 
     </section>
-
+    <script src="script.js"></script>
 </body>
 
 </html>

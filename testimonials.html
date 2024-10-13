@@ -6,24 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testimonials</title>
     <link rel="stylesheet" href="Style.css">
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            fetch('nav.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.querySelector('body').insertAdjacentHTML('afterbegin', data);
-                });
-        });
-
-        // Fetch the footer
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.body.insertAdjacentHTML('beforeend', data);
-            });
-    </script>
 </head>
-
 <body>
     <h1>
         Lochquarry Outdoor centre </h1>
@@ -74,6 +57,7 @@
 
         <img src="Images/Banner.png" alt="Customer Review Banner">
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
